@@ -1,8 +1,33 @@
-<div id="deputies"></div>
+<h1>Listing Twitter users</h1>
 
-<script type="text/javascript">
-  $(function() {
-    window.router = new Solitweet.Routers.DeputiesRouter({deputies: <%= @deputies.to_json(:methods => :number_of_sent_messages).html_safe -%>});
-    Backbone.history.start();
-  });
-</script>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Surname</th>
+    <th>Description</th>
+    <th>Photo</th>
+    <th>Twitter username</th>
+    <th>Number of sent messages</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deputies.each do |deputy| %>
+  <tr>
+    <td><%= deputy.firstname %></td>
+    <td><%= deputy.surname %></td>
+    <td><%= deputy.description %></td>
+    <td><%= image_tag deputy.photo_url %></td>
+    <td><%= deputy.twitter_username %></td>
+    <td><%= deputy.number_of_sent_messages %></td>
+    <td><%= link_to 'Show', deputy %></td>
+    <td><%= link_to 'Edit', edit_deputy_path(deputy) %></td>
+    <td><%= link_to 'Destroy', deputy, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Twitter user', new_deputy_path %>

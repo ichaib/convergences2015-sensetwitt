@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531044632) do
+ActiveRecord::Schema.define(:version => 20120919102340) do
 
   create_table "deputies", :force => true do |t|
-    t.string    "firstname"
-    t.string    "surname"
-    t.string    "description"
-    t.string    "photo_url"
-    t.string    "twitter_username"
-    t.string    "political_party"
-    t.integer   "number_of_twitter_followers"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "firstname"
+    t.string   "surname"
+    t.string   "description"
+    t.string   "photo_url"
+    t.string   "twitter_username"
+    t.string   "political_party"
+    t.integer  "number_of_twitter_followers"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "influencers", :force => true do |t|
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(:version => 20120531044632) do
   end
 
   create_table "proposals", :force => true do |t|
-    t.string    "title"
-    t.text      "content"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "photo_url"
-    t.string    "twitter_message"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_url"
+    t.string   "twitter_message"
   end
 
   create_table "sent_messages", :force => true do |t|

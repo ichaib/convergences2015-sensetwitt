@@ -3,9 +3,9 @@
 module PagesHelper
 
   def title
-    html = "Avec SenseTwitt, soutiens les propositions du Mouvement des entrepreneurs sociaux"
-    html << ' (<a href="http://www.mouves.org/" target="_blank">Mouves</a>) '
-    html << "pour développer l'entrepreneuriat social"
+    html = "Avec "
+    html << '<a href="http://www.convergences2015.org/" target="_blank">Convergence2015</a> '
+    html << ", soutiens les objectifs du millénaire en tweetant !"
     html.html_safe
   end
 

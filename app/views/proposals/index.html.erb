@@ -1,8 +1,27 @@
-<div id="proposals"></div>
+<h1>Listing proposals</h1>
 
-<script type="text/javascript">
-  $(function() {
-    window.router = new Solitweet.Routers.ProposalsRouter({proposals: <%= @proposals.to_json.html_safe -%>});
-    Backbone.history.start();
-  });
-</script>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Twitter message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @proposals.each do |proposal| %>
+  <tr>
+    <td><%= link_to truncate(proposal.title), proposal %></td>
+    <td><%= proposal.content %></td>
+    <td><%= proposal.twitter_message %></td>
+    <td><%= link_to 'Show', proposal %></td>
+    <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+    <td><%= link_to 'Destroy', proposal, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Proposal', new_proposal_path %>
