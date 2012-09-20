@@ -1,5 +1,6 @@
 ﻿<div id="conteneur">
 <div id="contenu">
+  <%= render 'header' %>
   <h1><%= title %></h1>
   <span id="header"><p><i>A quel utilisateur de Twitter veux-tu envoyer ton message ?</i></p></span>
   <center>
@@ -10,7 +11,7 @@
     <% end %>
       <td>
         <span class="toolTip deputies" title="<%= "#{deputy.firstname} #{deputy.surname}" %>">
-          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message} &related=makesensetwitts&url=http://www.convergences2015.org" %>
+          <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message} &related=makesensetwitts&url=http://goo.gl/NyMDR" %>
           <%= link_to sharing_url, :target => "_blank", :data => { :deputy_id => deputy.id, :proposal_id => params[:proposal_id] } do %>
             <img src="<%= deputy.photo_url %>" width="105px">
           <% end %>

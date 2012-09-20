@@ -1,19 +1,17 @@
 ﻿<div id="conteneur">
 <div id="contenu">
+  <%= render 'header' %>
   <h1><%= title %></h1>
-  <div id="header"><p><i>Quel message veux-tu soutenir ?</i></p></div>
-  <table border="0">
-  <% @proposals.each do |proposal| %>
-    <tr>  
-      <td>
-        <a href="<%= choice_path(proposal.id) %>">
-          <p><strong><%= proposal.title %></strong> - <%= proposal.content %></p>
-        </a>
-      </td>
-      <td><img src="<%= proposal.photo_url %>" width="90px"></img></td>
-    </tr>
+  <div id="header"><p>Clique sur le message que tu veux soutenir:</p></div>
+  <ul>
+  <% @proposals.sort{|a,b| rand(2) <=> rand(2)}.each do |proposal| %>
+    <li>
+      <a href="<%= choice_path(proposal.id) %>">
+        <p><strong><%= proposal.title %></strong> - <%= proposal.content %></p>
+      </a>
+    </li>
   <% end %>
-  </table>  
+</ul>
   <%= render 'shared/ref' %>
 </div>
  </div>

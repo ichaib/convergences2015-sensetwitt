@@ -3,18 +3,17 @@
 <head>
   <title>Convergences2015 - SenseTwitt</title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="description" content="Soutiens les objectifs du millénaire en tweetant !" />
-  <meta property="og:title" content="Avec le SenseTwitt de Convergences2015, je soutiens les objectifs du millénaire en tweetant !" />
+  <meta property="og:title" content="Avec le SenseTweet de Convergences2015, je soutiens les objectifs du millénaire en tweetant !" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.convergences2015.org" />
-  <meta property="og:image" content="http://www.convergences2015.org/Content/img/logo_top_1036.png" />
-  <meta property="fb:page_id" content="451350898792" />
+  <meta property="og:url" content="http://sensetweet.convergences2015.org" />
+  <meta property="og:image" content="http://sensetweet.convergences2015.org/logo.jpg" />
 </head>
 <body class="<%= params[:controller] %> <%= params[:action] %>">
 
 <%= yield %>
 
+<%= javascript_include_tag "application" %>
 </body>
 </html>
