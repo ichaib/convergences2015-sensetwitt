@@ -2,22 +2,29 @@
 <div id="contenu">
   <%= render 'header' %>
   <h1><%= title %></h1>
-  <span id="header"><p><i>A quel utilisateur de Twitter veux-tu envoyer ton message ?</i></p></span>
+
+  <p class="proposal">
+    <strong><%= @proposal.title %></strong> - <%= @proposal.content %>
+  </p>
+
+  <span id="header">
+    <p><i>To which Twitter user you want to show your support for Yunus?</i></p>
+  </span>
   <center>
   <table border="0">
   <% @deputies.sort{|a,b| rand(2) <=> rand(2)}.each_with_index do |deputy, index| %>
-    <% if index % 5 == 0 %>
+    <% if index % 10 == 0 %>
       <tr>
     <% end %>
       <td>
         <span class="toolTip deputies" title="<%= "#{deputy.firstname} #{deputy.surname}" %>">
           <% sharing_url = "https://twitter.com/share?text=@#{deputy.twitter_username} #{@twitter_message}&related=makesensetwitts&url=http://imwithyun.us" %>
           <%= link_to sharing_url, :target => "_blank", :data => { :deputy_id => deputy.id, :proposal_id => params[:proposal_id] } do %>
-            <img src="<%= deputy.photo_url %>" width="105px">
+            <img src="<%= deputy.photo_url %>" width="80px">
           <% end %>
         </span>
       </td>
-    <% if index % 5 == 4 %>
+    <% if index % 10 == 9 %>
       </tr>
     <% end %>
   <% end %>  

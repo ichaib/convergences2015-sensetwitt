@@ -2,34 +2,49 @@
 <div id="contenu">
   <%= render 'header' %>
   <h1><%= title %></h1>
-  <span id="header"><p><i>Merci de soutenir Yunus !</i></p></span>
+  <span id="header"i><p><i>Thank you for supporting Yunus!</i></p></span>
 
   <div class="share">
-    <h3>Tu peux partager à tes amis ce site en cliquant sur le bouton "j'aime" ci-dessous.</h3>
+
+    <div class="fb-like-box" data-href="https://www.facebook.com/ProfessorYunus"
+      data-width="850" data-show-faces="true" data-stream="false" data-header="true"></div>
+    
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=419199008142702";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fb-like" data-href="http://sensetweet.convergences2015.org" data-send="true" data-width="450" data-show-faces="true"></div>
 
-    <h3>Tu as envie de Twitter un influenceur ? Clique simplement sur un compte twitter ci-dessous.</h3>
+    <% if 1 == 2 %>
+      <h3>Tu peux partager à tes amis ce site en cliquant sur le bouton "j'aime" ci-dessous.</h3>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="fb-like" data-href="http://sensetweet.convergences2015.org" data-send="true" data-width="450" data-show-faces="true"></div>
 
-    <div class="people">
+      <h3>Tu as envie de Twitter un influenceur ? Clique simplement sur un compte twitter ci-dessous.</h3>
 
-      <% @influencers.sort{|a,b| rand(2) <=> rand(2)}[0,20].each_with_index do |influencer, index| %>
-            <div class="toolTip influencers" title="<%= "#{influencer.firstname} #{influencer.surname}" %>">
-              <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message}&related=makesensetwitts&url=http://imwithyun.us" %>
-              <%= link_to sharing_url, :target => "_blank", :data => { :influencer_id => influencer.id, :proposal_id => params[:proposal_id] } do %>
-                <img src="<%= influencer.photo_url %>" width="80px">
-              <% end %>
-            </div>
-      <% end %>  
-    
-    </div>
+      <div class="people">
+
+        <% @influencers.sort{|a,b| rand(2) <=> rand(2)}[0,20].each_with_index do |influencer, index| %>
+              <div class="toolTip influencers" title="<%= "#{influencer.firstname} #{influencer.surname}" %>">
+                <% sharing_url = "https://twitter.com/share?text=@#{influencer.twitter_username} #{@twitter_message}&related=makesensetwitts&url=http://imwithyun.us" %>
+                <%= link_to sharing_url, :target => "_blank", :data => { :influencer_id => influencer.id, :proposal_id => params[:proposal_id] } do %>
+                  <img src="<%= influencer.photo_url %>" width="80px">
+                <% end %>
+              </div>
+        <% end %>  
+      
+      </div>
+    <% end %>
   </div>
   
   <%= render 'shared/ref' %>
