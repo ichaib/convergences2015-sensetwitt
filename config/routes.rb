@@ -9,8 +9,7 @@ Solitweet::Application.routes.draw do
 
   # match "choix/:proposal_id" => "pages#deputies", :as => :choice
   match "thank-you" => "pages#thanks", :as => :thanks
-  match "sense-hackers" => "pages#sense_hackers", :as => :sense_hackers
-  match "a-propos" => "pages#about", :as => :about
+  match "about" => "pages#sense_hackers", :as => :sense_hackers
   
   match "admin" => "pages#admin"
 
