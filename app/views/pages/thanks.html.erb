@@ -9,22 +9,28 @@
       Thank you for supporting Yunus, but don't forget the most important,
       <strong>sign the petition</strong> on avaaz so that we reach 1 million signatures. 700,000 people
       already signed:
-      <%= link_to "http://www.avaaz.org/en/save_the_world_best_bank_j/", "http://www.avaaz.org/en/save_the_world_best_bank_j/" %>
+      <%= link_to "http://www.avaaz.org/en/save_the_world_best_bank_j/",
+        "http://www.avaaz.org/en/save_the_world_best_bank_j/", :target => "_blank" %>
     </div>
 
-    <div class="fb-like-box" data-href="https://www.facebook.com/ProfessorYunus"
-      data-width="850" data-show-faces="false" data-stream="false" data-header="true"></div>
-    
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=419199008142702";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="avaaz">
+      <%= link_to image_tag("petition.jpg"),
+        "http://www.avaaz.org/en/save_the_world_best_bank_j/", :target => "_blank" %>
+    </div>
 
     <% if 1 == 2 %>
+      <div class="fb-like-box" data-href="https://www.facebook.com/ProfessorYunus"
+        data-width="850" data-show-faces="false" data-stream="false" data-header="true"></div>
+      
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=419199008142702";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
       <h3>Tu peux partager à tes amis ce site en cliquant sur le bouton "j'aime" ci-dessous.</h3>
       <div id="fb-root"></div>
       <script>(function(d, s, id) {
