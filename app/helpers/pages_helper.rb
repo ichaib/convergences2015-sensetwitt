@@ -4,8 +4,8 @@ module PagesHelper
 
   def title
     html = "Avec "
-    html << '<a href="http://www.convergences2015.org/" target="_blank">Convergence2015</a>'
-    html << ", soutiens les objectifs du millénaire en tweetant !"
+    html << '<a href="http://www.animafac.net" target="_blank">Animafac</a>'
+    html << ", invite les acteurs de l’enseignement supérieur à faire le pari des associations étudiantes !"
     html.html_safe
   end
 
