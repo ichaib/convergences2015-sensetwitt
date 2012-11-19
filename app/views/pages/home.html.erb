@@ -2,12 +2,34 @@
 <div id="contenu">
   <%= render 'header' %>
   <h1><%= title %></h1>
-  <div id="header"><p>Clique sur le message que tu veux soutenir:</p></div>
+  <div class="intro">
+    <p>
+      Pour notre réseau d’associations étudiantes, le développement d’une vie associative
+      étudiante dynamique sur les campus constitue un réel enjeu pour les établissements
+      d’enseignement supérieur. Elle contribue à la réussite de tous les étudiants en luttant,
+      entre autres, contre le sentiment de mal-être des étudiants, en favorisant leur
+      socialisation, en leur permettant d’acquérir une culture citoyenne ou encore en facilitant leur insertion professionnelle.
+    </p>
+    <p>
+      A la veille des Assises nationales de l’enseignement supérieur, il nous semble essentiel
+      d’inviter les établissements d’enseignement supérieur à favoriser l’implication associative de leurs étudiants !
+    </p>
+    <p>
+      « Aussi, pour que la vie associative étudiante soit un vrai sujet les 26 et 27 novembre
+      prochains, cliques sur le message que tu souhaites soutenir ! »
+    </p>
+  </div>
+  <div id="header"><p>Nos propositions:</p></div>
   <ul>
   <% @proposals.sort{|a,b| rand(2) <=> rand(2)}.each do |proposal| %>
     <li>
       <a href="<%= choice_path(proposal.id) %>">
-        <p><strong><%= proposal.title %></strong> - <%= proposal.content %></p>
+        <p>
+          <% unless proposal.title.empty? %>
+            <strong><%= proposal.title %></strong> -
+          <% end %>
+          <%= proposal.content %>
+        </p>
       </a>
     </li>
   <% end %>
