@@ -6,11 +6,10 @@
   <%= stylesheet_link_tag    "application" %>
   <%= csrf_meta_tags %>
   <meta property="og:description" name="description" content="Avec Animafac, invite les acteurs de l’enseignement supérieur à faire le pari des associations étudiantes !" />
-  <meta property="og:title" content="A la veille des Assises nationales de l’enseignement supérieur, il nous semble essentiel d’inviter les établissements d’enseignement supérieur
-  à favoriser l’implication associative de leurs étudiants !" />
+  <meta property="og:title" content="Universités, faites le pari des associations étudiantes !" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://sensetweet.animafac.fr/" />
-  <meta property="og:image" content="http://sensetweet.animafac.fr/assets/logo.jpg" />
+  <meta property="og:url" content="<%= request.protocol + request.host_with_port %>" />
+  <meta property="og:image" content="<%= request.protocol + request.host_with_port + "/assets/logo.jpg" %>" />
 </head>
 <body class="<%= params[:controller] %> <%= params[:action] %>">
 
