@@ -1,24 +1,40 @@
 ﻿<div id="conteneur">
 <div id="contenu">
   <%= render 'header' %>
-  <h1><%= title %></h1>
+  <h1><%= title %> <span class="hashtag">#imwithyunus</span></h1>
 
   <div class="video">
     <iframe src="http://player.vimeo.com/video/51821230?badge=0" width="400" height="220"
       frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   </div>
 
-  <p class="proposal">
+  <p class="intro">
     <strong><%= @proposal.title %></strong>
-    "Prof.Yunus does not deserve to be treated this way." New York Times, January 29, 2011
   </p>
-  <p class="proposal">Microfinance pioneer Professor Muhammad Yunus – founder of Grameen Bank and, with it, winner
-    of the 2006 Nobel Peace Prize – has already lost his position at the Bank because of partisan politics.
-    Now, the government of Bangladesh's Prime Minister, Sheikh Hasina, is moving to take control of the Bank
-    from the 8.3 million poor women who own it, endangering the future and the independence of this Nobel-winning organization.
+  <p class="intro">
+    Microfinance pioneer Professor Muhammad Yunus – founder of Grameen Bank and 2006 Nobel
+    Peace Prize – has lost his position at the Bank he founded because of partisan politics.
+    Now Bangladesh's Prime Minister, Sheikh Hasina, is moving in to take control of the
+    Bank away from the 8.3 million poor women who own it,
+    endangering the future and the independence of the organization. 
   </p>
-  <p class="proposal">
-    Please support this petition on Avaaz.org to save the world’s best bank – help us reach 1 million signatures, to start a media firestorm about this shameless attack on Professor Yunus’s life work: http://www.avaaz.org/en/save_the_world_best_bank/  Then use your social networks to tell your friends and family about it, using the #imwithyunus hashtag!
+  <p class="intro">
+    "Prof.Yunus does not deserve to be treated this way." The New York Times, January 29, 2011
+  </p>
+
+  <div class="clear"></div>
+
+  <h3>1. Sign the petition on <%= link_to "Avaaz.org", "http://www.avaaz.org/fr/", :target => "_blank" %></h3>
+  <p class="intro">
+    Make a difference and help us save the world’s best bank! <br />
+    We need to reach 1 million signatures and start a media firestorm about this shameless attack on Professor Yunus’s life work: 
+    <%= link_to "http://www.avaaz.org/en/save_the_world_best_bank", "http://www.avaaz.org/en/save_the_world_best_bank", :target => "_blank" %>
+  </p>
+
+  <h3>2. Spread the word</h3>
+  <p class="intro">
+    Use your social networks to tell your friends and family, political leaders,
+    media and your favourite entertainers about it, using the #imwithyunus hashtag! 
   </p>
 
   <span id="header">

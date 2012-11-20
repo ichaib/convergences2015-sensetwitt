@@ -3,7 +3,7 @@
 module PagesHelper
 
   def title
-    html = "I am with Yunus."
+    html = "I am with Yunus"
   end
 
 end
