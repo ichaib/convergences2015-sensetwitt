@@ -8,7 +8,7 @@ $ ->
   $('.toolTip').tipsy()
   $('.toolTip.deputies a').click (event) ->
     setTimeout( # for safari
-      => window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/politicien/" + $(this).data("deputyId"),
+      => window.location = "<%= url.thanks_path() %>/" + $(this).data("proposalId") + "/influenceur/" + $(this).data("deputyId"),
       100)
   $('.toolTip.influencers a').click (event) ->
     setTimeout( # for safari
